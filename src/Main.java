@@ -32,18 +32,22 @@ public class Main {
         int round = randomKart.nextInt(1, 4);
 
         for(int i = 0; i <= round; i++) {
-            start = randomKart.nextInt(1, 10);
+            start = randomKart.nextInt(1, 11);
             resKomp += start;
         }
 
-        if(res > resKomp && res < 21)
+        if(res > resKomp && res <= 21)
             System.out.println("Wygrałeś!!! Twój oponent miał tylko: " + resKomp);
-        else if(res < resKomp && resKomp < 21)
+        else if(res < resKomp && resKomp <= 21)
             System.out.println("Przegrałeś!!! Twój oponent miał: " + resKomp);
         else if(res == resKomp)
             System.out.println("Poruwne! Karta przeciwnika: " + resKomp);
+        else if(res > 21 && resKomp > 21)
+            System.out.println("Nikt nie wygrał, masz za dużo!!! Twój oponent też: " + resKomp);
         else if(res < resKomp && resKomp > 21)
             System.out.println("Wygrałeś!!! Twój oponent miał za dużo: " + resKomp);
+        else if(res > 21 && resKomp <= 21)
+            System.out.println("Przegrałeś, masz za dużo!!!  Twój przeciwnik ma: " + resKomp);
 
     }else
         System.out.println("Konieć!");
